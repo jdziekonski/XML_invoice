@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faktura_vat
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="faktura_vat.xsd">
+    
+    <numer_faktury>Faktura VAT nr 06/03/2018</numer_faktury>
+    <data_wystawienia>24-03-2018</data_wystawienia>
+    <miejsce_wystawienia>Wrocław</miejsce_wystawienia>
+    <data_sprzedazy>24-03-2018</data_sprzedazy>
+    <termin_platnosci>07-04-2018</termin_platnosci>
+    <sposob_zaplaty>Karta płatnicza</sposob_zaplaty>
+    <kwota_slownie>Siedemset czterdzieści siedem złotych dwanaście trzy grosze</kwota_slownie>
+    <konto>2222 2222 2222 2222 (PKO)</konto>
+    <dok_mag>WZ nr 05/03/2018</dok_mag>
+    
+    <wystawca>
+    <podmiot>
+        <nazwa>Firma testowa</nazwa>
+        <ulica>Testowa 1</ulica>
+        <miejscowosc>50-124 Wrocław</miejscowosc>
+        <nip>PL1112223344</nip>
+    </podmiot>
+    </wystawca>
+    
+    <nabywca>
+    <podmiot>
+        <nazwa>Firma przykładowa</nazwa>
+        <ulica>Długa 7</ulica>
+        <miejscowosc>50-134 Wrocław</miejscowosc>
+        <nip>PL1112345678</nip>
+    </podmiot>
+    </nabywca>
+    
+    <lista_produktow>
+        <produkt>
+            <lp>1</lp>
+            <nazwa>Produkt 1</nazwa>
+            <ilosc>1</ilosc>
+            <cena_netto>22,50zł</cena_netto>
+            <kwota_netto>22,50zł</kwota_netto>
+            <vat>23,00%</vat>
+            <kwota_vat>5,18zł</kwota_vat>
+            <kwota_brutto>27,68zł</kwota_brutto>
+        </produkt>
+        <produkt>
+            <lp>2</lp>
+            <nazwa>Produkt 2</nazwa>
+            <ilosc>5</ilosc>
+            <cena_netto>117,00zł</cena_netto>
+            <kwota_netto>117,00zł</kwota_netto>
+            <vat>23,00%</vat>
+            <kwota_vat>134,55zł</kwota_vat>
+            <kwota_brutto>719,55zł</kwota_brutto>
+        </produkt>
+    </lista_produktow>
+    
+    <razem>747,23zł</razem>
+</faktura_vat>

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:element name="numer_faktury" type="xs:string"/>
+    <xs:element name="data_wystawienia" type="xs:string"/>
+    <xs:element name="miejsce_wystawienia" type="xs:string"/>
+    <xs:element name="data_sprzedazy" type="xs:string"/>
+    <xs:element name="termin_platnosci" type="xs:string"/>
+    <xs:element name="sposob_zaplaty" type="xs:string"/>
+    <xs:element name="kwota_slownie" type="xs:string"/>
+    <xs:element name="konto" type="xs:string"/>
+    <xs:element name="dok_mag" type="xs:string"/>
+    
+    <xs:element name="podmiot">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nazwa" type="xs:string"/>
+                <xs:element name="ulica" type="xs:string"/>
+                <xs:element name="miejscowosc" type="xs:string"/>
+                <xs:element name="nip" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="wystawca">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="podmiot" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="nabywca">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="podmiot" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="produkt">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="lp" type="xs:string"/>
+                <xs:element name="nazwa" type="xs:string"/>
+                <xs:element name="ilosc" type="xs:string"/>
+                <xs:element name="cena_netto" type="xs:string"/>
+                <xs:element name="kwota_netto" type="xs:string"/>
+                <xs:element name="vat" type="xs:string"/>
+                <xs:element name="kwota_vat" type="xs:string"/>
+                <xs:element name="kwota_brutto" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="lista_produktow">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="produkt" maxOccurs="10"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="razem" type="xs:string"/>
+    
+    <xs:element name="faktura_vat">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="numer_faktury" />
+            <xs:element ref="data_wystawienia" />
+            <xs:element ref="miejsce_wystawienia" />
+            <xs:element ref="data_sprzedazy" />
+            <xs:element ref="termin_platnosci" />
+            <xs:element ref="sposob_zaplaty" />
+            <xs:element ref="kwota_slownie" />
+            <xs:element ref="konto" />
+            <xs:element ref="dok_mag" />
+            <xs:element ref="wystawca" />
+            <xs:element ref="nabywca" />
+            <xs:element ref="lista_produktow" />
+            <xs:element ref="razem" />
+          </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>
